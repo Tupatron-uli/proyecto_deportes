@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registros</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Registros Inscritos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Deporte</th>
+          <th>Nombre</th>
+          <th>Apellido P.</th>
+          <th>Apellido M.</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Sexo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% registros.forEach(r => { %>
+          <tr>
+            <td><%= r.deporte %></td>
+            <td><%= r.nombre %></td>
+            <td><%= r.apellido_paterno %></td>
+            <td><%= r.apellido_materno %></td>
+            <td><%= r.email %></td>
+            <td><%= r.telefono %></td>
+            <td><%= r.sexo %></td>
+            <td>
+              <a href="/editar/<%= r.id %>">Editar</a> |
+              <a href="/eliminar/<%= r.id %>" onclick="return confirm('¿Eliminar este registro?')">Eliminar</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <a href="/dashboard"><button>Volver</button></a>
+    </div>
+</body>
+</html>

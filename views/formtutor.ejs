@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de Padres</title>
+</head>
+<body>
+  <h1>Agregar Padre</h1>
+  <form action="/add" method="POST">
+    <input type="text" name="nombre_padre" placeholder="Nombre del padre" required><br>
+    <input type="text" name="apellido_paterno" placeholder="Apellido paterno" required><br>
+    <input type="text" name="apellido_materno" placeholder="Apellido materno" required><br>
+    <input type="number" name="edad" placeholder="Edad" required><br>
+    <input type="text" name="domicilio" placeholder="Domicilio" required><br>
+    <input type="text" name="numero_telefonico" placeholder="Número telefónico" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="date" name="fecha_nacimiento" required><br>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h2>Registros</h2>
+  <table border="1">
+    <tr>
+      <th>Nombre</th><th>Paterno</th><th>Materno</th><th>Edad</th>
+      <th>Domicilio</th><th>Teléfono</th><th>Email</th><th>Fecha Nac.</th><th>Acciones</th>
+    </tr>
+    <% padres.forEach(p => { %>
+      <tr>
+        <td><%= p.nombre_padre %></td>
+        <td><%= p.apellido_paterno %></td>
+        <td><%= p.apellido_materno %></td>
+        <td><%= p.edad %></td>
+        <td><%= p.domicilio %></td>
+        <td><%= p.numero_telefonico %></td>
+        <td><%= p.email %></td>
+        <td><%= p.fecha_nacimiento.toISOString().split('T')[0] %></td>
+        <td>
+          <a href="/edittutor/<%= p.id %>">Editar</a> |
+          <a href="/delete/<%= p.id %>" onclick="return confirm('¿Eliminar este registro?')">Eliminar</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>

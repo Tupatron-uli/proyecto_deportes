@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Padre</title>
+</head>
+<body>
+  <h1>Editar Padre</h1>
+  <form action="/update/<%= padre.id %>" method="POST">
+    <input type="text" name="nombre_padre" value="<%= padre.nombre_padre %>" required><br>
+    <input type="text" name="apellido_paterno" value="<%= padre.apellido_paterno %>" required><br>
+    <input type="text" name="apellido_materno" value="<%= padre.apellido_materno %>" required><br>
+    <input type="number" name="edad" value="<%= padre.edad %>" required><br>
+    <input type="text" name="domicilio" value="<%= padre.domicilio %>" required><br>
+    <input type="text" name="numero_telefonico" value="<%= padre.numero_telefonico %>" required><br>
+    <input type="email" name="email" value="<%= padre.email %>" required><br>
+    <input type="date" name="fecha_nacimiento" value="<%= padre.fecha_nacimiento.toISOString().split('T')[0] %>" required><br>
+    <button type="submit">Actualizar</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Familiar</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Formulario de Datos Familiares</h1>
+
+    <form id="familiaForm" action="/guardar" method="POST">
+      <label>Gastos familiares mensuales:</label>
+      <input type="number" name="gastos" required>
+
+      <label>Ingresos familiares por mes:</label>
+      <input type="number" name="ingresos" required>
+
+      <label>Miembros familiares que trabajan:</label>
+      <input type="number" name="miembros" required>
+
+      <button type="submit">Enviar</button>
+</form>
+       <a href="/dashboard"><button>volver</button></a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario <%= deporte %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Formulario de <%= deporte %></h2>
+    <form action="<%= datos ? ('/actualizar/' + datos.id) : ('/guardar/' + deporte) %>" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre" value="<%= datos?.nombre || '' %>" required>
+      <input type="text" name="apellido_paterno" placeholder="Apellido Paterno" value="<%= datos?.apellido_paterno || '' %>" required>
+      <input type="text" name="apellido_materno" placeholder="Apellido Materno" value="<%= datos?.apellido_materno || '' %>" required>
+      <input type="email" name="email" placeholder="Email" value="<%= datos?.email || '' %>" required>
+
+      <!-- ✅ Aquí corregimos el error de .toISOString() -->
+      <input type="date" name="fecha_nacimiento" value="<%= datos?.fecha_nacimiento?.substring(0, 10) || '' %>" required>
+
+      <textarea name="salud" placeholder="Problemas de salud"><%= datos?.salud || '' %></textarea>
+      <input type="text" name="domicilio" placeholder="Domicilio" value="<%= datos?.domicilio || '' %>" required>
+      <input type="tel" name="telefono" placeholder="Número telefónico" value="<%= datos?.telefono || '' %>" required>
+
+      <select name="sexo" required>
+        <option value="">Seleccione sexo</option>
+        <option value="Masculino" <%= datos?.sexo === 'Masculino' ? 'selected' : '' %>>Masculino</option>
+        <option value="Femenino" <%= datos?.sexo === 'Femenino' ? 'selected' : '' %>>Femenino</option>
+        <option value="Otro" <%= datos?.sexo === 'Otro' ? 'selected' : '' %>>Otro</option>
+      </select>
+
+      <button type="submit"><%= datos ? 'Actualizar' : 'Guardar' %></button>
+    </form>
+  </div>
+</body>
+</html>

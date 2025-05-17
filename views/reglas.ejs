@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reglas de Deportes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .deporte {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .deporte img {
+      width: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .contenido {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .contenido h2 {
+      color: #34495e;
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .deporte {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .deporte img {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Reglas Básicas de Deportes</h1>
+    <p>Fútbol · Básquetbol · Voleibol · Tocho Bandera</p>
+  </header>
+
+  <div class="container">
+
+    <div class="deporte">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Soccer_Youth_Goal.jpg" alt="Fútbol">
+      <div class="contenido">
+        <h2>Fútbol</h2>
+        <ul>
+          <li>El partido se juega entre dos equipos de 11 jugadores.</li>
+          <li>El objetivo es anotar goles pateando el balón hacia la portería rival.</li>
+          <li>Prohibido usar las manos (excepto el portero dentro del área).</li>
+          <li>Un partido dura 90 minutos, divididos en dos tiempos de 45.</li>
+          <li>Gana el equipo con más goles al final del partido.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="deporte">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball_game.jpg" alt="Básquetbol">
+      <div class="contenido">
+        <h2>Básquetbol</h2>
+        <ul>
+          <li>Dos equipos de 5 jugadores intentan encestar el balón en el aro del oponente.</li>
+          <li>El aro está a una altura de 3.05 metros.</li>
+          <li>Cada canasta vale 2 o 3 puntos, según la distancia.</li>
+          <li>Se juega en 4 periodos de 10 o 12 minutos (dependiendo del reglamento).</li>
+          <li>Prohibido correr con el balón sin botarlo (pasos).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="deporte">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Volleyball_girls.jpg" alt="Voleibol">
+      <div class="contenido">
+        <h2>Voleibol</h2>
+        <ul>
+          <li>Dos equipos de 6 jugadores separados por una red.</li>
+          <li>El objetivo es pasar el balón por encima de la red sin que toque el suelo de tu lado.</li>
+          <li>Cada equipo tiene un máximo de 3 toques antes de devolver el balón.</li>
+          <li>El juego se gana al obtener 3 sets de 25 puntos (con al menos 2 de diferencia).</li>
+          <li>No se permite sostener el balón; debe golpearse.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="deporte">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Flag_football_game.jpg" alt="Tocho Bandera">
+      <div class="contenido">
+        <h2>Tocho Bandera</h2>
+        <ul>
+          <li>Versión sin contacto del fútbol americano.</li>
+          <li>Cada jugador lleva banderas sujetas con velcro en la cintura.</li>
+          <li>El objetivo es avanzar el balón y anotar en la zona de anotación.</li>
+          <li>En lugar de placar, se retira una bandera del portador del balón.</li>
+          <li>Generalmente se juega en equipos de 5 a 7 personas.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
