@@ -1,12 +1,16 @@
+
+const db = require('./database'); 
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const path = require('path');
-const db = require('./database'); // Tu conexión mysql con callbacks
+
 
 const app = express();
-const PORT = 8000;
+const PORT=8000;
+
+
 
 // Configuración
 app.set('view engine', 'ejs');
@@ -20,9 +24,12 @@ app.use(session({
 }));
 
 // Rutas
+app.get('/', (req, res) => {
+  res.render('paginaprincipal');
+});
 
 // Página principal (login y registro)
-app.get('/', (req, res) => {
+app.get('/login', (req, res) => {
   res.render('login');
 });
 
@@ -76,7 +83,7 @@ app.get('/dashboard', (req, res) => {
 });
 
 // Mostrar formulario de un deporte (nuevo registro o editar)
-app.get('/form/:deporte', (req, res) => {
+app.get('/form', (req, res) => {
   const deporte = req.params.deporte;
   res.render('form', { deporte, datos: null });
 });
